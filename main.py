@@ -1,7 +1,12 @@
+import os
+
 import telebot
+from dotenv import load_dotenv
 from youtube import Youtube
 
-bot = telebot.TeleBot("6233519533:AAFGC2fMD3ZohD9ErdYeezB2WV1Sj46zTuc")
+load_dotenv()
+
+bot = telebot.TeleBot(os.getenv("TOKEN"))
 
 #команда start
 @bot.message_handler(commands=["start"])
